@@ -29,12 +29,15 @@
 
   // "a *b* c" → ["a ", <em>b</em>, " c"]
   const rich = (str = '') => str.split('*').map((part, i) => (i % 2 ? h('em', {}, part) : part));
+  // "a **b** c" → ["a ", <strong>b</strong>, " c"]
+  const bold = (str = '') => str.split('**').map((part, i) => (i % 2 ? h('strong', {}, part) : part));
   // ["Hello,", "I'm *me*"] → one line on desktop; the <br> only shows on phones
   const lines = (v) => [].concat(v).flatMap((t, i, all) => (i < all.length - 1 ? [...rich(t), ' ', h('br', { class: 'br-m' })] : rich(t)));
 
   const isExternal = (href) => /^https?:\/\//i.test(href);
   const a = (href, cls, ...kids) =>
     h('a', { href, class: cls, ...(isExternal(href) ? { target: '_blank', rel: 'noopener noreferrer' } : {}) }, ...kids);
+  const newTab = (el) => { el.target = '_blank'; el.rel = 'noopener'; return el; };
 
   const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const span = (start, end) => [start, end].filter(Boolean).join(' — ');
@@ -108,7 +111,7 @@
     h('div', { class: 'wrap top__bar' },
       a('#', 'brand mono', p.initials, h('span', { 'aria-hidden': 'true', text: '.' })),
       h('nav', { class: 'top__nav', 'aria-label': 'Contact' },
-        S.contact.map((c) => a(c.href, 'mono link', c.label)),
+        S.contact.map((c) => (c.newTab ? newTab(a(c.href, 'mono link', c.label)) : a(c.href, 'mono link', c.label))),
         a('#contact', 'mono link', 'Contact'))));
 
   /* ---------- hero: portrait + organisations (left), tagline (right) ---------- */
@@ -141,7 +144,7 @@
     h('div', { class: 'hero__copy' },
       h('p', { class: 'mono eyebrow', text: p.eyebrow }),
       h('h1', { id: 'headline' }, lines(p.headline)),
-      h('ul', { class: 'bullets' }, p.bullets.map((t) => h('li', { text: t }))),
+      h('ul', { class: 'bullets' }, p.bullets.map((t) => h('li', {}, bold(t)))),
       h('nav', { class: 'jump', 'aria-label': 'Jump to section' },
         p.links.map((l) => a(l.href, 'mono jump__link', `${l.label} `, h('span', { 'aria-hidden': 'true', text: '↓' }))))));
 

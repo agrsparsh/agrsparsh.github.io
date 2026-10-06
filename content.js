@@ -4,6 +4,8 @@
    • Text in "double quotes" is what appears on the page. Keep the quotes and
      the comma at the end of each line.
    • Wrap a word in *asterisks* to make it italic + orange:  "I'm *Sparsh*."
+   • In the intro bullets, wrap words in **double asterisks** to make them bold +
+     highlighted:  "I'm a **Consultant** at **EY**"
    • To add a job: copy one whole { ... }, block, paste it where you want it
      to appear, and change the text. To remove one: delete its whole block.
    • Photos: put the file in the /images folder, then list it under `photos`.
@@ -30,9 +32,9 @@ window.SITE = {
     eyebrow: "Sparsh Agrawal / Singapore",
     headline: ["Hello There,", "I'm *Sparsh Agrawal.*"],
     bullets: [
-      "I'm a Consultant at EY, advising global organisations on some of the most critical issues they face on a perpetual basis. I graduated from NTU Singapore with a degree in Electrical Engineering (Honours, with Distinction)",
-      "I'm extremely passionate about Strategy, Advisory, Public Policy, and AI (most interestingly on how AI can improve governance and citizen experience)",
-      "Excellent communicator, great chef, and a people's-person",
+      "I'm a **Consultant** at **EY**, advising global organisations on some of the most critical issues they face on a perpetual basis. I graduated from **NTU Singapore** with a degree in **Electrical Engineering** (Honours, with Distinction)",
+      "I'm extremely passionate about **Strategy**, **Advisory**, **Public Policy**, and **AI** (most interestingly on how AI can improve governance and citizen experience)",
+      "**Excellent communicator, great chef, and a people's-person**",
     ],
     portrait: {
       src: "images/portrait.jpg",            // square crop shown inside the circle
@@ -48,9 +50,11 @@ window.SITE = {
   },
 
   // Shown top-right in the header (followed by a "Contact" link) and in the Contact section.
+  // newTab: true opens the link in a new browser tab.
   contact: [
     { label: "Email",    href: "mailto:sparsh001@e.ntu.edu.sg" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/agrsparsh/" },
+    { label: "Resume",   href: "Sparsh_Agrawal_Resume.pdf", newTab: true },
   ],
 
   /* ------------------------------ EXPERIENCE ------------------------------ */
@@ -107,6 +111,8 @@ window.SITE = {
       ],
       photos: [
         { src: "images/ey-intern-1.jpg", alt: "EY interns and colleagues at a garden event" },
+        { src: "images/ey-intern-2.jpg", alt: "Sparsh with arms crossed in front of the EY logo at the office", pos: "30% 45%" },
+        { src: "images/ey-intern-3.jpg", alt: "Selfie of Sparsh and a colleague by the EY sign at the office", pos: "50% 60%" },
       ],
     },
     {

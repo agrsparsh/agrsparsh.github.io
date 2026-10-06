@@ -12,11 +12,12 @@ and it hosts for free on **GitHub Pages**.
 | `images/` | Photos (`ey-1.jpg`…), organisation logos (`logo-*.png`), portrait | Yes: add or replace files |
 | `index.html` | Page shell, plus the page title and link-preview text (see "Before you publish") | Rarely |
 | `styles.css`, `script.js` | Design and page-building code | Only to change the look |
+| `Sparsh_Agrawal_Resume.pdf` | Résumé opened by the "Resume" link in the header (it is public, phone number included) | Replace with a newer PDF of the same name |
 | `favicon.svg` | Browser-tab icon ("SA.") | Rarely |
 | `.nojekyll`, `.gitignore` | GitHub housekeeping | No |
 
-> Only the contents of **this folder** go online. Your original photos, résumé PDF and the `mockups` folder
-> (one level up) stay private on your computer.
+> Only the contents of **this folder** go online. Your original photos and the `mockups` folder
+> (one level up) stay private on your computer. The copy of your résumé in this folder is public.
 
 ---
 

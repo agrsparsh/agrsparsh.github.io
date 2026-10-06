@@ -118,6 +118,12 @@ h1 {
   font-size: .9rem; line-height: 1.6; color: rgba(236, 233, 225, .86);
 }
 .bullets li::before { content: "→"; position: absolute; left: 0; color: var(--warm); }
+/* key words: bold, with a soft marker-style highlight along the lower half */
+.bullets strong {
+  font-weight: 600; color: var(--stone);
+  background: linear-gradient(transparent 58%, rgba(218, 157, 102, .32) 58%);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
 
 .jump { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px 26px; }
 .jump__link { font-size: .68rem; color: var(--stone); padding-bottom: 4px; border-bottom: 1px solid var(--warm); transition: color .25s var(--ease); }
@@ -150,9 +156,9 @@ h1 {
 
 .sec { position: relative; padding-top: 26px; padding-bottom: 22px; }
 .sec::before { content: ""; position: absolute; top: 0; left: var(--gutter); right: var(--gutter); height: 1px; background: var(--line); }
-h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 1rem + 1.7vw, 2.4rem); line-height: 1.1; letter-spacing: -.015em; margin-bottom: 16px; }
-.num { color: var(--warm); font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
-h2 .num { margin-right: 14px; position: relative; top: -.35em; }
+h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.5rem, .9rem + 1.4vw, 2.05rem); line-height: 1.1; letter-spacing: -.015em; margin-bottom: 16px; }
+.num { color: var(--warm); font-family: var(--mono); font-size: clamp(1.05rem, .8rem + .6vw, 1.3rem); letter-spacing: .08em; text-transform: uppercase; }
+h2 .num { margin-right: 14px; position: relative; top: -.2em; }
 h3 { font-family: var(--serif); font-weight: 500; font-size: 1.45rem; line-height: 1.2; }
 
 /* entry: [badge] name + designation ........ dates
@@ -227,7 +233,7 @@ h2 + .hobbies .hobby:first-child { border-top: 0; }
 
 .contact { background: var(--surface); border-top: 1px solid var(--line-strong); margin-top: 14px; padding-block: clamp(36px, 5vw, 56px); text-align: center; }
 .contact__inner { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.contact h2 { margin: 0; font-size: clamp(1.9rem, 1rem + 2.4vw, 2.9rem); }
+.contact h2 { margin: 0; font-size: clamp(1.7rem, .9rem + 2vw, 2.5rem); }
 .contact__mail { font-family: var(--serif); font-size: clamp(.95rem, .8rem + .55vw, 1.2rem); border-bottom: 1px solid var(--warm); padding-bottom: 3px; transition: color .25s var(--ease); overflow-wrap: anywhere; }
 .contact__mail:hover { color: var(--warm); }
 
@@ -275,5 +281,6 @@ h2 + .hobbies .hobby:first-child { border-top: 0; }
   *, .bullets li, .arrows li, .entry__role { color: #111 !important; }
   em, .eyebrow, .entry__dates { color: #8a5a2b !important; }
   .hero { padding-block: 12px; }
+  .bullets strong { background: none; }
   .entry { break-inside: avoid; }
 }
